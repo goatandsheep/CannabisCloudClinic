@@ -4,18 +4,113 @@
     <title>Contact|Cannabis Cloud Clinic</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="app.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.min.css" integrity="sha256-X/mlyZAafJ8j5e74pWh4+qNUD1zurCvLA6hODVobQX0=" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="app.css" rel="stylesheet">
 
     <!-- page specific stuff -->
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   </head>
   <body>
-    <h1>Hello World</h1>
-    <p>Name: <input type="text" ng-model="input1"></p>
-    <a ng-href="http://www.gravatar.com/avatar/{{input1}}">link1</a>
+  <div class="bs-component">
+      <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-success" style="width: 66%"></div>
+        <div class="progress-bar progress-bar-info" style="width: 33%"></div>
+        <!-- <div class="progress-bar progress-bar-danger" style="width: 67%"></div> -->
+      </div>
+  </div>
+  <div class="page-header">
+      <h1 id="icon">Apply</h1>
+
+      <p>New patients welcome!
+      </p>
+    </div>
+    <div ng-app="">
+      <p>Name: <input type="text" ng-model="patientName"></p>
+      <div class="bs-component">
+          <a ng-href="mailto:md@cannabiscloudclinic.com?Subject=New%20Patient%20-%20{{patientName}}" class="btn btn-default btn-lg btn-block btn-raised">Book Your Appointment</a>
+      </div>
+      <div class="well bs-component">
+          <form class="form-horizontal">
+            <fieldset>
+              <legend>Legend</legend>
+              <div class="form-group is-empty">
+                <label for="inputEmail" class="col-md-2 control-label">Email</label>
+
+                <div class="col-md-10">
+                  <input type="email" class="form-control" id="inputEmail" placeholder="Email" style="cursor: auto;">
+                </div>
+              </div>
+              <div class="form-group is-empty">
+                <label for="inputPassword" class="col-md-2 control-label">Password</label>
+
+                <div class="col-md-10">
+                  <input type="password" class="form-control" id="inputPassword" placeholder="Password" style="cursor: auto;">
+
+                  <!--
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Checkbox
+                    </label>
+                    <label>
+                      <input type="checkbox" disabled> Disabled Checkbox
+                    </label>
+                  </div>
+                  <br>
+
+                  <div class="togglebutton">
+                    <label>
+                      <input type="checkbox" checked> Toggle button
+                    </label>
+                  </div>
+                  -->
+                </div>
+              </div>
+              <div class="form-group" style="margin-top: 0;"> <!-- inline style is just to demo custom css to put checkbox below input above -->
+                <div class="col-md-offset-2 col-md-10">
+                  <div class="checkbox disabled">
+                    <label>
+                      <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> Checkbox
+                    </label>
+                    <label>
+                      <input type="checkbox" disabled=""><span class="checkbox-material"><span class="check"></span></span> Disabled Checkbox
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                  <div class="togglebutton">
+                    <label>
+                      <input type="checkbox" checked=""><span class="toggle"></span> Toggle button
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group is-empty">
+                <label for="textArea" class="col-md-2 control-label">Textarea</label>
+
+                <div class="col-md-10">
+                  <textarea class="form-control" rows="3" id="textArea"></textarea>
+                  <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-10 col-md-offset-2">
+                  <button type="button" class="btn btn-default">Cancel</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
+    </div>
   </body>
 </html>
