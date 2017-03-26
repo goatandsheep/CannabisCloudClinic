@@ -66,7 +66,7 @@
               <div class="form-group label-floating is-empty">
                 <label class="col-md-2 control-label" for="patientName">Name</label>
                 <div class="col-md-10">
-                  <input class="form-control" id="patientName" type="text" placeholder="Name" style="cursor: auto;" ng-model="patientName">
+                  <input class="form-control" id="patientName" ng-model="patientName" type="text" placeholder="Full Name" style="cursor: auto;" required>
                 </div>
               </div>
 
@@ -74,36 +74,93 @@
                 <label class="col-md-2 control-label" for="inputEmail">Email</label>
 
                 <div class="col-md-10">
-                  <input class="form-control" id="inputEmail" type="email" placeholder="Email" style="cursor: auto;">
+                  <input class="form-control" id="inputEmail" ng-model="inputEmail" type="email" placeholder="Email" style="cursor: auto;">
                 </div>
               </div>
 
-              <div class="form-group" style="margin-top: 0;"> <!-- inline style is just to demo custom css to put checkbox below input above -->
-                <div class="col-md-offset-2 col-md-10">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> Checkbox
-                    </label>
-                    <label>
-                      <input type="checkbox" disabled=""><span class="checkbox-material"><span class="check"></span></span> Disabled Checkbox
-                    </label>
-                  </div>
+              <div class="form-group is-empty">
+                <label class="col-md-2 control-label" for="inputAge">Age</label>
+
+                <div class="col-md-10">
+                  <input class="form-control" id="inputAge" ng-model="inputAge" type="number" placeholder="Age" style="cursor: auto;" required>
+                </div>
+              </div>
+
+              <div class="form-group label-floating is-empty">
+                <label class="col-md-2 control-label" for="patPhone">Phone</label>
+                <div class="col-md-10">
+                  <input class="form-control" id="patPhone" ng-model="patPhone" type="tel" placeholder="Phone Number" style="cursor: auto;" required>
+                </div>
+              </div>
+
+              <div class="form-group label-floating is-empty">
+                <label class="col-md-2 control-label" for="patCondition">Eligible Condition(s)</label>
+
+                <div class="col-md-10">
+                  <select id="patCondition" ng-model="patCondition" multiple="" class="form-control" style="overflow:scroll;" required>
+                    <option>ADD/ADHD</option>
+                    <option>Alzheimer’s Disease</option>
+                    <option>Anxiety</option>
+                    <option>Arthritis</option>
+                    <option>Auto Accident(s)</option>
+                    <option>Back &amp; Neck Problems</option>
+                    <option>Brain Injury</option>
+                    <option>Cancer</option>
+                    <option>Chronic Nausea</option>
+                    <option>Chronic Pain</option>
+                    <option>Colitis</option>
+                    <option>Crohn’s Disease</option>
+                    <option>Depression</option>
+                    <option>Eating Disorders</option>
+                    <option>Epilepsy</option>
+                    <option>Fibromyalgia</option>
+                    <option>Gastrointestinal Disorders</option>
+                    <option>Hepatitis C</option>
+                    <option>HIV/AIDS</option>
+                    <option>Irritable Bowl Syndrome</option>
+                    <option>Kidney Failure/Dialysis</option>
+                    <option>Migraines</option>
+                    <option>Multiple Sclerosis</option>
+                    <option>Muscle Spasms</option>
+                    <option>Muscular Dystrophy</option>
+                    <option>Parkinson’s Disease</option>
+                    <option>Post Traumatic Stress Disorder</option>
+                    <option>Severe Arthritis</option>
+                    <option>Sexual Dysfunction</option>
+                    <option>Sleep Disorders</option>
+                    <option>Spinal Cord Injury/Disease</option>
+                  </select>
                 </div>
               </div>
               <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                  <div class="togglebutton">
-                    <label>
-                      <input type="checkbox" checked="" ng-model="toggley"><span class="toggle"></span> Toggle button
-                    </label>
-                  </div>
+                <label class="col-md-2 control-label" for="patRegion">Region</label>
+
+                <div class="col-md-10">
+                  <select id="patRegion" ng-model="patRegion" class="form-control" required>
+                    <!-- <option>Select your region</option> -->
+                    <option>Brampton, ON</option>
+                    <option>Scarborough, ON</option>
+                    <option>Toronto, ON</option>
+                    <option>Vancouver, BC</option>
+                    <option>Other</option>
+                  </select>
                 </div>
               </div>
               <div class="form-group is-empty">
-                <label for="textArea" class="col-md-2 control-label">Additional Information</label>
+                <label class="col-md-2 control-label" for="bestTime">Availability</label>
 
                 <div class="col-md-10">
-                  <textarea class="form-control" rows="3" id="textArea"></textarea>
+                  <textarea id="bestTime" ng-model="bestTime" class="form-control" rows="3" required></textarea>
+                  <span class="help-block">Which days, what time is best for our doctor to contact you?</span>
+                  <span ng-show="form-horizontal.bestTime.$touched && form-horizontal.bestTime.$invalid">Availability is required.</span>
+                </div>
+              </div>
+
+              <div class="form-group is-empty">
+                <label class="col-md-2 control-label" for="textArea">Additional Information</label>
+
+                <div class="col-md-10">
+                  <textarea id="textArea" ng-model="textArea" class="form-control" rows="3"></textarea>
                   <span class="help-block">Please include any additional information on how to get in touch with your doctor.</span>
                 </div>
               </div>
