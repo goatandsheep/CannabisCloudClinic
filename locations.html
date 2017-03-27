@@ -72,104 +72,131 @@
     <div class="container">
       <div class="page-header" id="banner">
         <h1>Locations</h1>
-        <p>Physical locations not needed</p>
+        <p>Physical locations available if preferred</p>
       </div>
+        <div id="map" style="width:100%;height:400px;"></div>
+        <script>
+
+          function initMap() {
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 4,
+              center: {lat: 50.28933925329177, lng: -103.359375},
+            });
+
+            // Create an array of alphabetical characters used to label the markers.
+            // var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var labels = [
+              '2100 Bloor St West Suite 7B Toronto ON M6S 1M7',
+              '3068 Mayfield Road Unit 7 Brampton, ON L6Z 0E3',
+              '1571 Sandhurst Circle Woodside Square Scarborough ON M1V 1V2',
+              '100 - 3077 Granville Street Vancouver, B.C. V6h 3J9'
+            ]
+
+            // Add some markers to the map.
+            // Note: The code uses the JavaScript Array.prototype.map() method to
+            // create an array of markers based on a given "locations" array.
+            // The map() method here has nothing to do with the Google Maps API.
+            var markers = locations.map(function(location, i) {
+              var marker = new google.maps.Marker({
+                position: location,
+              });
+              marker.addListener('click', function() {
+                infowindow.open(map, marker);
+              });
+              var infowindow = new google.maps.InfoWindow({
+                content: labels[i % labels.length]
+              });
+              return marker
+            });
+            // Add a marker clusterer to manage the markers.
+            var markerCluster = new MarkerClusterer(map, markers,
+                {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+          }
+          var locations = [
+            {lat: 43.65261779999999, lng: -79.47089349999999},
+            {lat: 43.7354223, lng: -79.8240659},
+            {lat: 43.8088942, lng: -79.2698542},
+            {lat: 49.2582596, lng: -123.1391668}
+          ]
+        </script>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeX4WW4f8JYM2EpFCrN5UCDXHuhC83Z5M&callback=initMap"></script>
       <div class="row">
-        <div id="map"></div>
-    <script>
-
-      function initMap() {
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 3,
-          center: {lat: -28.024, lng: 140.887}
-        });
-
-        // Create an array of alphabetical characters used to label the markers.
-        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-        // Add some markers to the map.
-        // Note: The code uses the JavaScript Array.prototype.map() method to
-        // create an array of markers based on a given "locations" array.
-        // The map() method here has nothing to do with the Google Maps API.
-        var markers = locations.map(function(location, i) {
-          return new google.maps.Marker({
-            position: location,
-            label: labels[i % labels.length]
-          });
-        });
-
-        // Add a marker clusterer to manage the markers.
-        var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-      }
-      var locations = [
-        {lat: -31.563910, lng: 147.154312},
-        {lat: -33.718234, lng: 150.363181},
-        {lat: -33.727111, lng: 150.371124},
-        {lat: -33.848588, lng: 151.209834},
-        {lat: -33.851702, lng: 151.216968},
-        {lat: -34.671264, lng: 150.863657},
-        {lat: -35.304724, lng: 148.662905},
-        {lat: -36.817685, lng: 175.699196},
-        {lat: -36.828611, lng: 175.790222},
-        {lat: -37.750000, lng: 145.116667},
-        {lat: -37.759859, lng: 145.128708},
-        {lat: -37.765015, lng: 145.133858},
-        {lat: -37.770104, lng: 145.143299},
-        {lat: -37.773700, lng: 145.145187},
-        {lat: -37.774785, lng: 145.137978},
-        {lat: -37.819616, lng: 144.968119},
-        {lat: -38.330766, lng: 144.695692},
-        {lat: -39.927193, lng: 175.053218},
-        {lat: -41.330162, lng: 174.865694},
-        {lat: -42.734358, lng: 147.439506},
-        {lat: -42.734358, lng: 147.501315},
-        {lat: -42.735258, lng: 147.438000},
-        {lat: -43.999792, lng: 170.463352}
-      ]
-    </script>
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeX4WW4f8JYM2EpFCrN5UCDXHuhC83Z5M&callback=initMap">
-    </script>
-      </div>
-      <div class="row">
-        <div class="col-md-4 bs-component">
+        <div class="col-md-3 bs-component">
           <div class="list-group">
             <div class="list-group-item">
               <div class="row-action-primary">
                 <i class="material-icons">room</i>
               </div>
               <div class="row-content">
-                <h4 class="list-group-item-heading">Tile with a label</h4>
+                <h4 class="list-group-item-heading">Bloor West</h4>
 
-                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+                <p class="list-group-item-text">7B - 2100 Bloor St West<br>
+                  Toronto, ON<br>
+
+                  Phone: <a href="tel:16473524433">647-352-4433</a><br>
+                  Fax: <a href="tel:14166043922">416-604-3922</a><br>
+              </p>
               </div>
             </div>
             <div class="list-group-separator"></div>
+          </div>
+        </div>
+
+        <div class="col-md-3 bs-component">
+          <div class="list-group">
             <div class="list-group-item">
               <div class="row-action-primary">
                 <i class="material-icons">room</i>
               </div>
               <div class="row-content">
-                <div class="least-content">10m</div>
-                <h4 class="list-group-item-heading">Tile with a label</h4>
+                <h4 class="list-group-item-heading">Brampton</h4>
 
-                <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                <p class="list-group-item-text">7 - 3068 Mayfield Road<br />
+                  Brampton, ON<br />
+                  Phone: <a href="tel:19058462442">905-846-2442</a><br /></p>
               </div>
             </div>
             <div class="list-group-separator"></div>
+          </div>
+        </div>
+
+        <div class="col-md-3 bs-component">
+          <div class="list-group">
             <div class="list-group-item">
               <div class="row-action-primary">
                 <i class="material-icons">room</i>
               </div>
               <div class="row-content">
-                <div class="least-content">8m</div>
-                <h4 class="list-group-item-heading">Tile with a label</h4>
+                <h4 class="list-group-item-heading">Scarborough</h4>
 
-                <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                <p class="list-group-item-text">1571 Sandhurst Circle<br />
+                  Woodside Square<br />
+                  Scarborough, ON<br />
+                  Phone: <a href="tel:14167549911">416-754-9911</a><br />
+                  Fax: <a href="tel:14167549915">416-754-9915</a><br />
+                </p>
+              </div>
+            </div>
+            <div class="list-group-separator"></div>
+          </div>
+        </div>
+
+        <div class="col-md-3 bs-component">
+          <div class="list-group">
+            <div class="list-group-item">
+              <div class="row-action-primary">
+                <i class="material-icons">room</i>
+              </div>
+              <div class="row-content">
+                <h4 class="list-group-item-heading">Vancouver</h4>
+
+                <p class="list-group-item-text">100 - 3077 Granville Street<br />
+                  Vancouver, BC<br />
+                  V6h 3J9<br>
+                  Phone: <a href="tel:16044284898">604-428-4898</a>
+                </p>
               </div>
             </div>
             <div class="list-group-separator"></div>
