@@ -11,11 +11,34 @@ h1, h2 {
 
 }
 
-.active {
-  background-color: green !important;
-
-}
-
 .navbar {
   margin-bottom: 0;
+  background-color: #00d8ff;
+}
+#banner {
+  background-image: url('img/filler.png');
+	top: 0; left: 0; right: 0; bottom: 0;
+  height: 80vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.list-group-item :first-child {
+    margin-right: 0;
+}
+.header-page {
+  padding-left:4em;
+  padding-right:4em;
+  padding-top:8em;
+  padding-bottom:6em;
+}
+
+.light-green {
+  background-color: #00ffb6;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .active {
+  background-color: #4de4ff !important;
 }
