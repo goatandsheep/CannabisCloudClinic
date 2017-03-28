@@ -70,19 +70,19 @@
                 </div>
               </div>
 
-              <div class="form-group is-empty">
+              <!-- <div class="form-group is-empty">
                 <label class="col-md-2 control-label" for="inputEmail">Email</label>
 
                 <div class="col-md-10">
                   <input class="form-control" id="inputEmail" ng-model="inputEmail" type="email" placeholder="Email" style="cursor: auto;">
                 </div>
-              </div>
+              </div> -->
 
               <div class="form-group is-empty">
-                <label class="col-md-2 control-label" for="inputAge">Age</label>
+                <label class="col-md-2 control-label" for="patAge">Age</label>
 
                 <div class="col-md-10">
-                  <input class="form-control" id="inputAge" ng-model="inputAge" type="number" placeholder="Age" style="cursor: auto;" required>
+                  <input class="form-control" id="patAge" ng-model="patAge" type="number" placeholder="Age" style="cursor: auto;" required>
                 </div>
               </div>
 
@@ -167,7 +167,8 @@
             </fieldset>
           </form>
           <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
-              <a ng-href="mailto:md@cannabiscloudclinic.com?Subject=New%20Patient%20-%20{{patientName}}" class="btn btn-default btn-lg btn-block btn-raised">Book Your Appointment</a>
+
+              <a ng-href="mailto:md@cannabiscloudclinic.com?Subject=New%20Patient%20-%20{{patientName}}&Body=Age%3A%20{{patAge}}%0APhone%20Number%3A%20{{patPhone}}%0AEligible%20Conditions%3A%20{{patCondition}}%0ARegion%3A%20{{patRegion}}%0A%0AAvailability%3A%20{{bestTime}}%0A%0AAdditional%20Information%3A%20{{textArea}}%0A%0ARegards%2C%0A{{patientName}}" class="btn btn-default btn-lg btn-block btn-raised">Book Your Appointment</a>
         </div>
         <div class=" bs-component">
           <!-- <div class="well"> -->
