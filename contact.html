@@ -55,9 +55,9 @@
   </div>
   <div class="container">
     <div class="page-header">
-      <h1 id="icon">Apply</h1>
+      <h1 id="icon">Book Consultation</h1>
 
-      <p class="lead">Our online medical doctor will be in touch with you shortly to diagnose your conditions.</p>
+      <p class="lead">A member of our staff will be in touch with you shortly for immediate assistance.</p>
     </div>
     <div ng-app="">
       <div class="well bs-component">
@@ -157,20 +157,11 @@
                   <span ng-show="form-horizontal.bestTime.$touched && form-horizontal.bestTime.$invalid">Availability is required.</span>
                 </div>
               </div>
-
-              <div class="form-group is-empty">
-                <label class="col-md-2 control-label" for="textArea">Additional Information</label>
-
-                <div class="col-md-10">
-                  <textarea id="textArea" ng-model="textArea" class="form-control" rows="3"></textarea>
-                  <span class="help-block">Please include any additional information on how to get in touch with your doctor.</span>
-                </div>
-              </div>
             </fieldset>
           </form>
           <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
 
-              <a ng-href="mailto:md@cannabiscloudclinic.com?Subject=New%20Patient%20-%20{{patientName}}&Body=Age%3A%20{{patAge}}%0APhone%20Number%3A%20{{patPhone}}%0AEligible%20Conditions%3A%20{{patCondition}}%0ARegion%3A%20{{patRegion}}%0A%0AAvailability%3A%20{{bestTime}}%0A%0AAdditional%20Information%3A%20{{textArea}}%0A%0ARegards%2C%0A{{patientName}}" class="btn btn-default btn-lg btn-block btn-raised">Book Your Appointment</a>
+              <a ng-href="mailto:md@cannabiscloudclinic.com?Subject=New%20Patient%20-%20{{patientName}}&Body=Age%3A%20{{patAge}}%0APhone%20Number%3A%20{{patPhone}}%0AEligible%20Conditions%3A%20{{patCondition}}%0ARegion%3A%20{{patRegion}}%0A%0AAvailability%3A%20{{bestTime}}%0A%0ARegards%2C%0A{{patientName}}" class="btn btn-default btn-lg btn-block btn-raised">Book Consultation</a>
         </div>
         <div class=" bs-component">
           <!-- <div class="well"> -->
