@@ -18,11 +18,12 @@ h1, h2 {
 #banner {
   background-image: url('img/filler.png');
 	top: 0; left: 0; right: 0; bottom: 0;
-  height: 80vh;
   background-attachment: fixed;
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
-  background-size: cover;
+  /*background-size: cover;*/
+  height: 70vh;
+  background-size: auto 90vh;
 
 }
 .list-group-item :first-child {
