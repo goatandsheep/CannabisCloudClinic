@@ -5,7 +5,7 @@ body {
   /*background-color: #EEEEEE;*/
   background-color: white;
 }
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Helvetica', 'Arial', sans-serif;
   font-weight: 300;
 
@@ -13,10 +13,11 @@ h1, h2 {
 
 .navbar {
   margin-bottom: 0;
-  background-color: #00d8ff;
+  /*background-color: #00d8ff;*/
+  background-color: #00ffb6;
 }
 #banner {
-  background-image: url('img/filler.png');
+  background-image: url('img/fillertemp.png');
 	top: 0; left: 0; right: 0; bottom: 0;
   background-attachment: fixed;
   background-position: center top;
@@ -41,5 +42,8 @@ h1, h2 {
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .active {
-  background-color: #4de4ff !important;
+  /*background-color: #4de4ff !important;*/
+  /*background-color: #4dffcc !important;*/
+  background-color: #66ffd4 !important;
+  color: black;
 }

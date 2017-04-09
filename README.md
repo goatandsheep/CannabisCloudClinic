@@ -7,6 +7,8 @@ An marketing site for an online doctor.
 Blue: #00d8ff
 Green: #00ffb6
 
+Purple: #3949ab
+
 ##Notes
 
 - [ ] Fix form
@@ -20,16 +22,17 @@ Move green section from home page to after eligibility check, i.e. check access,
 - [ ] Steps to get access:
   - [ ] picture of doctor talking to patient
   - [ ] Copy steps from the e-mail
-- [ ] Call Now (follow everywhere):
+- [x] Call Now (follow everywhere):
 - Book Consultation: upload document
-  - [ ] Best time for our clinic to contact you
-  - [ ] "If you suffer from an eligible medical condition and the health information relevant to your case is available, book a consultation now and a member of our staff will be in touch with you for immediate assistance."
+  - [x] Best time for our clinic to contact you
+  - [x] "If you suffer from an eligible medical condition and the health information relevant to your case is available, book a consultation now and a member of our staff will be in touch with you for immediate assistance."
 - Learn How to adm...
   - Make video smaller
 - "Doctors"
-  - "natural alternative treatment"
-  - When we say "Cannabis..." put the logo
-  - Remove: "We..." to the end, inc. contact us
-- "Get emails for each location"
+  - [x] "natural alternative treatment"
+  - [x] When we say "Cannabis..." put the logo
+  - [x] Remove: "We..." to the end, inc. contact us
 
-Muscular, Gastrointestinal,
+- [x] "Get emails for each location"
+
+      Muscular, Gastrointestinal,

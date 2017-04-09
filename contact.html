@@ -26,7 +26,7 @@
     <nav class="navbar navbar-default">
       <!-- <div class="container"> -->
         <div class="navbar-header">
-            <a href="index.html" class="navbar-brand"><img alt="CCC Logo" src="img/CCC-logo-black.png" height="40px"></a>
+            <a href="index.html" class="navbar-brand"><img alt="CCC Logo" src="img/icon-black.png" height="40px"></a>
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -58,7 +58,7 @@
     <div class="page-header">
       <h1 id="icon">Book Consultation</h1>
 
-      <p class="lead">A member of our staff will be in touch with you shortly for immediate assistance.</p>
+      <p class="lead">If you suffer from an eligible medical condition and the health information relevant to your case is available, book a consultation now and a member of our staff will be in touch with you for immediate assistance.</p>
     </div>
     <div ng-app="">
       <div class="well bs-component">
@@ -154,7 +154,7 @@
 
                 <div class="col-md-10">
                   <textarea id="bestTime" ng-model="bestTime" class="form-control" rows="3" required></textarea>
-                  <span class="help-block">Which days, what time is best for our doctor to contact you?</span>
+                  <span class="help-block">Which days, what time is best for our clinic to contact you?</span>
                   <span ng-show="form-horizontal.bestTime.$touched && form-horizontal.bestTime.$invalid">Availability is required.</span>
                 </div>
               </div>
@@ -164,15 +164,43 @@
 
               <a ng-href="mailto:md@cannabiscloudclinic.com?Subject=New%20Patient%20-%20{{patientName}}&Body=Age%3A%20{{patAge}}%0APhone%20Number%3A%20{{patPhone}}%0AEligible%20Conditions%3A%20{{patCondition}}%0ARegion%3A%20{{patRegion}}%0A%0AAvailability%3A%20{{bestTime}}%0A%0ARegards%2C%0A{{patientName}}" class="btn btn-default btn-lg btn-block btn-raised">Book Consultation</a>
         </div>
+        <div>
+          <h2>Preparing for consultation</h2>
+          <p>If you are considering cannabis as a natural treatment alternative, you'll need to prepare the following documentation:</p>
+          <div>
+            <h3>1. Relevant Health Information</h3>
+            Provide us with relevant health information from your family physician / specialist(s) / health care provider(s), e.g.
+            <ul>
+              <li>Patient's pertinent consult / case assessment report(s)</li>
+              <li>Patient's complete list of prescribed medication(s)</li>
+              <li>Patient's complete list of non-prescribed drug(s), i.e over-the-counter medications (OTCs)</li>
+              <li>Patient's complete list of health / nutritional / dietary supplement(s) such as vitamins, minerals, herbs, meal supplements, sports nutrition products, natural food supplements, or other related product(s) that has been tried or considered for conventional / alternative treatment(s) and that have been found to be ineffective or medically inappropriate for the treatment of the corresponding medical condition</li>
+              <li>Information about any other form/s of therapy  previously received or are presently receive to treat the eligible condition's symptom(s)</li>
+              <li>Patient's pertinent laboratory test(s), scans/imaging</li>
+            </ul>
+          </div>
+          <div>
+            <h3>2. Photo Identification</h3>
+            <p>Provide us with a copy / scan of a current and valid photo identification issued in Canada, e.g. driver’s licence, health card, passport</p>
+          </div>
+        </div>
+        <div class="bs-component">
+          <h2>The consultation</h2>
+          <p>A physician will confirm your eligibility and may provide you with the medical document to Access Cannabis for Medical Purposes.</p>
+        </div>
         <div class=" bs-component">
           <!-- <div class="well"> -->
             <!-- <div class="panel-body"> -->
-              To learn more about the many ways of administering medical cannabis, <a href="administer.html">go to the next page</a>.
+            <h2>After the consultation</h2>
+              Learn more about the many ways of administering medical cannabis by <a href="administer.html">going to the next page</a>.
             <!-- </div> -->
           <!-- </div> -->
         </div>
 
       </div>
+    </div>
+    <div id="embed" style="position:fixed;bottom:10px;right:30px;background-color:#3949ab;padding-left:17px;padding-right:17px;padding-top:13px;padding-bottom:13px;border-radius:999rem;">
+      <a href="tel:14168317498"><span style="color:white;" class="glyphicon glyphicon-earphone"></span></a>
     </div>
   </body>
 </html>
