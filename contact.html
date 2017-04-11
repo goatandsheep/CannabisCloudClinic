@@ -62,14 +62,14 @@
     </div>
     <div ng-app="">
       <div class="well bs-component">
-          <form class="form-horizontal">
+          <form name="book" class="form-horizontal" method="POST" action="https://script.google.com/macros/s/AKfycbxVFRRIALJ-RT4Ngiqmf6AAFzjvc8g99GdRcWa8z7jrVwo1ybg/exec" novalidate ng-submit="loginform.$valid && login.submit()" target="_blank">
             <fieldset>
               <!-- <legend>Patient Information Form</legend> -->
 
               <div class="form-group label-floating is-empty">
-                <label class="col-md-2 control-label" for="patientName">Name</label>
+                <label class="col-md-2 control-label" for="name">Name</label>
                 <div class="col-md-10">
-                  <input class="form-control" id="patientName" ng-model="patientName" type="text" placeholder="Full Name" style="cursor: auto;" required>
+                  <input class="form-control" id="name" name="name" ng-model="name" type="text" placeholder="Full Name" style="cursor: auto;" required>
                 </div>
               </div>
 
@@ -82,25 +82,33 @@
               </div> -->
 
               <div class="form-group is-empty">
-                <label class="col-md-2 control-label" for="patAge">Age</label>
+                <label class="col-md-2 control-label" for="age">Age</label>
 
                 <div class="col-md-10">
-                  <input class="form-control" id="patAge" ng-model="patAge" type="number" placeholder="Age" style="cursor: auto;" required>
+                  <input class="form-control" id="age" name="age" ng-model="age" type="number" placeholder="Age" style="cursor: auto;" required>
+                </div>
+              </div>
+
+              <div class="form-group is-empty">
+                <label class="col-md-2 control-label" for="email">E-mail</label>
+
+                <div class="col-md-10">
+                  <input class="form-control" id="email" name="email" ng-model="email" type="email" placeholder="E-mail" style="cursor: auto;" required>
                 </div>
               </div>
 
               <div class="form-group label-floating is-empty">
-                <label class="col-md-2 control-label" for="patPhone">Phone</label>
+                <label class="col-md-2 control-label" for="phone">Phone</label>
                 <div class="col-md-10">
-                  <input class="form-control" id="patPhone" ng-model="patPhone" type="tel" placeholder="Phone Number" style="cursor: auto;" required>
+                  <input class="form-control" id="phone" name="phone" ng-model="phone" type="tel" placeholder="Phone Number" style="cursor: auto;" required>
                 </div>
               </div>
 
               <div class="form-group label-floating is-empty">
-                <label class="col-md-2 control-label" for="patCondition">Eligible Condition(s)</label>
+                <label class="col-md-2 control-label" for="conditions">Eligible Condition(s)</label>
 
                 <div class="col-md-10">
-                  <select id="patCondition" ng-model="patCondition" multiple="" class="form-control" style="overflow:scroll;" required>
+                  <select id="conditions" name="conditions" ng-model="conditions" multiple="" class="form-control" style="overflow:scroll;" required>
                     <option>Alcoholism</option>
                     <option>ALS</option>
                     <option>Alzheimer’s Disease</option>
@@ -143,14 +151,14 @@
                     <option>Spinal Cord Injury</option>
                     <option>Tourette’s Syndrome</option>
                     <option>Ulcerative Colitis</option>
-                  </select>
+                  </select><span class="help-block">CTRL-Click and select all conditions that apply.</span>
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-md-2 control-label" for="patRegion">Region</label>
+                <label class="col-md-2 control-label" for="region">Region</label>
 
                 <div class="col-md-10">
-                  <select id="patRegion" ng-model="patRegion" class="form-control" required>
+                  <select id="region" name="region" ng-model="region" class="form-control" required>
                     <!-- <option>Select your region</option> -->
                     <option>Brampton, ON</option>
                     <option>Scarborough, ON</option>
@@ -164,16 +172,17 @@
                 <label class="col-md-2 control-label" for="bestTime">Availability</label>
 
                 <div class="col-md-10">
-                  <textarea id="bestTime" ng-model="bestTime" class="form-control" rows="3" required></textarea>
+                  <textarea id="bestTime" name="bestTime" ng-model="bestTime" class="form-control" rows="3" required></textarea>
                   <span class="help-block">Which days, what time is best for our clinic to contact you?</span>
-                  <span ng-show="form-horizontal.bestTime.$touched && form-horizontal.bestTime.$invalid">Availability is required.</span>
+                  <span ng-show="book.bestTime.$touched && book.bestTime.$invalid">Availability is required.</span>
                 </div>
+              </div>
+              <div class="control-group">
+                  <input class="btn btn-default btn-lg btn-block btn-raised" type="submit" ng-disabled="book.$invalid" value="Book Consultation">
               </div>
             </fieldset>
           </form>
-          <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
 
-              <a ng-href="mailto:md@cannabiscloudclinic.com?Subject=New%20Patient%20-%20{{patientName}}&Body=Age%3A%20{{patAge}}%0APhone%20Number%3A%20{{patPhone}}%0AEligible%20Conditions%3A%20{{patCondition}}%0ARegion%3A%20{{patRegion}}%0A%0AAvailability%3A%20{{bestTime}}%0A%0ARegards%2C%0A{{patientName}}" class="btn btn-default btn-lg btn-block btn-raised">Book Consultation</a>
         </div>
         <div>
           <h2>Preparing for consultation</h2>
@@ -210,8 +219,14 @@
 
       </div>
     </div>
-    <div id="embed" style="position:fixed;bottom:10px;right:30px;background-color:#3949ab;padding-left:17px;padding-right:17px;padding-top:13px;padding-bottom:13px;border-radius:999rem;">
-      <a href="tel:14168317498"><span style="color:white;" class="glyphicon glyphicon-earphone"></span></a>
+    <div style="display:none;" id="thankyou_message">
+      Thank you for booking your stuff. Redirecting you now to our page.
     </div>
+    <a href="tel:14168317498">
+      <div id="embed" class="dark-purple">
+        <span class="glyphicon glyphicon-earphone"></span>
+      </div>
+    </a>
+    <script data-cfasync="false" type="text/javascript" src="http://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
   </body>
 </html>

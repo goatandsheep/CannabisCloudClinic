@@ -4,24 +4,23 @@ An marketing site for an online doctor.
 
 ## Branding
 
-Blue: #00d8ff
-Green: #00ffb6
+Blue: `#00d8ff`
 
-Purple: #3949ab
+Green: `#00ffb6`
+
+Purple: `#3949ab`
 
 ## Notes
 
 - [ ] Fix form
-- [ ] "Am I eligible for cannabis?": click to eligible link
-- [ ] assessed: nooo only consultation
+- [x] "Am I eligible for cannabis?": click to eligible link
+- [x] assessed: nooo only consultation
 - [ ] put pictures for each of the problems
 - [ ] eligible??
-
-Move green section from home page to after eligibility check, i.e. check access, then get access
-
+- [x] Move green section from home page to after eligibility check, i.e. check access, then get access
 - [ ] Steps to get access:
   - [ ] picture of doctor talking to patient
-  - [ ] Copy steps from the e-mail
+  - [x] Copy steps from the e-mail
 - [x] Call Now (follow everywhere):
 - Book Consultation: upload document
   - [x] Best time for our clinic to contact you
