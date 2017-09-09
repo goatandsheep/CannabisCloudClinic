@@ -1,190 +1,200 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en-US">
-  <head profile="http://www.w3.org/2005/10/profile">
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    <title>Locations ☁️ Cannabis Cloud Clinic</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+<head profile="http://www.w3.org/2005/10/profile">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <title>Locations ☁️ Cannabis Cloud Clinic</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.min.css" integrity="sha256-X/mlyZAafJ8j5e74pWh4+qNUD1zurCvLA6hODVobQX0=" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.umd.min.js" integrity="sha256-GYcdwXot2kSaBb8kr9o8zDKYBwQ1PCkugjcCYFQS+IA=" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
 
-    <link href="app.css" rel="stylesheet">
-  </head>
-  <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.min.css"
+    integrity="sha256-X/mlyZAafJ8j5e74pWh4+qNUD1zurCvLA6hODVobQX0=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.umd.min.js"
+    integrity="sha256-GYcdwXot2kSaBb8kr9o8zDKYBwQ1PCkugjcCYFQS+IA=" crossorigin="anonymous"></script>
 
-    <div class="bs-component">
-      <nav class="navbar navbar-default">
-        <!-- <div class="container"> -->
-          <div class="navbar-header">
-              <a href="index.html" class="navbar-brand"><img alt="CCC Logo" src="img/icon-black.png" height="40px"></a>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+  <link href="app.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="bs-component">
+    <nav class="navbar navbar-default">
+      <!-- <div class="container"> -->
+      <div class="navbar-header">
+        <a href="index.html" class="navbar-brand"><img alt="CCC Logo" src="img/icon-black.png" height="40px"></a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-          </div>
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <!-- <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li> -->
-              <li><a href="eligible.html">① Check Eligibility</a></li>
-              <li><a href="contact.html">② Book Consultation</a></li>
-              <li><a href="administer.html">③ Administer</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="doctors.html">Physicians</a></li>
-              <li class="active"><a href="locations.html">Locations</a></li>
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        <!-- </div> -->
-      </nav>
-        </div>
-    <div class="container">
-      <div class="page-header">
-        <h1>Locations</h1>
-        <p class="lead">Physical locations available if preferred</p>
       </div>
-        <div id="map" style="width:100%;height:400px;"></div>
-        <script>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <!-- <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li> -->
+          <li><a href="eligible.html">① Check Eligibility</a></li>
+          <li><a href="contact.html">② Book Consultation</a></li>
+          <li><a href="administer.html">③ Administer</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="doctors.html">Physicians</a></li>
+          <li class="active"><a href="locations.html">Locations</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+      <!-- </div> -->
+    </nav>
+  </div>
+  <div class="container">
+    <div class="page-header">
+      <h1>Locations</h1>
+      <p class="lead">Physical locations available if preferred</p>
+    </div>
+    <div id="map" style="width:100%;height:400px;"></div>
+    <script>
+      function initMap() {
 
-          function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: { lat: 50.28933925329177, lng: -103.359375 },
+        });
 
-            var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 4,
-              center: {lat: 50.28933925329177, lng: -103.359375},
-            });
+        // Create an array of alphabetical characters used to label the markers.
+        // var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var labels = [
+          '2100 Bloor St West Suite 7B Toronto ON M6S 1M7',
+          '3068 Mayfield Road Unit 7 Brampton, ON L6Z 0E3',
+          '1571 Sandhurst Circle Woodside Square Scarborough ON M1V 1V2',
+          '100 - 3077 Granville Street Vancouver, B.C. V6h 3J9'
+        ]
 
-            // Create an array of alphabetical characters used to label the markers.
-            // var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            var labels = [
-              '2100 Bloor St West Suite 7B Toronto ON M6S 1M7',
-              '3068 Mayfield Road Unit 7 Brampton, ON L6Z 0E3',
-              '1571 Sandhurst Circle Woodside Square Scarborough ON M1V 1V2',
-              '100 - 3077 Granville Street Vancouver, B.C. V6h 3J9'
-            ]
-
-            // Add some markers to the map.
-            // Note: The code uses the JavaScript Array.prototype.map() method to
-            // create an array of markers based on a given "locations" array.
-            // The map() method here has nothing to do with the Google Maps API.
-            var markers = locations.map(function(location, i) {
-              var marker = new google.maps.Marker({
-                position: location,
-              });
-              marker.addListener('click', function() {
-                infowindow.open(map, marker);
-              });
-              var infowindow = new google.maps.InfoWindow({
-                content: labels[i % labels.length]
-              });
-              return marker
-            });
-            // Add a marker clusterer to manage the markers.
-            var markerCluster = new MarkerClusterer(map, markers,
-                {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-          }
-          var locations = [
-            {lat: 43.65261779999999, lng: -79.47089349999999},
-            {lat: 43.7354223, lng: -79.8240659},
-            {lat: 43.8088942, lng: -79.2698542},
-            {lat: 49.2582596, lng: -123.1391668}
-          ]
-        </script>
-        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeX4WW4f8JYM2EpFCrN5UCDXHuhC83Z5M&callback=initMap"></script>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="list-group">
-            <div class="list-group-item">
-              <!-- <div class="row-action-primary">
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function (location, i) {
+          var marker = new google.maps.Marker({
+            position: location,
+          });
+          marker.addListener('click', function () {
+            infowindow.open(map, marker);
+          });
+          var infowindow = new google.maps.InfoWindow({
+            content: labels[i % labels.length]
+          });
+          return marker
+        });
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+          { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+      }
+      var locations = [
+        { lat: 43.65261779999999, lng: -79.47089349999999 },
+        { lat: 43.7354223, lng: -79.8240659 },
+        { lat: 43.8088942, lng: -79.2698542 },
+        { lat: 49.2582596, lng: -123.1391668 }
+      ]
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeX4WW4f8JYM2EpFCrN5UCDXHuhC83Z5M&callback=initMap"></script>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="list-group">
+          <div class="list-group-item">
+            <!-- <div class="row-action-primary">
                 <i class="material-icons">room</i>
               </div> -->
-              <div class="row-content">
-                <h4 class="list-group-item-heading">Bloor West</h4>
+            <div class="row-content">
+              <h4 class="list-group-item-heading">Bloor West</h4>
 
-                <p class="list-group-item-text"><a href="https://www.google.ca/maps/place/2100+Bloor+St+W,+Toronto,+ON+M6S/">7B - 2100 Bloor St West<br>
+              <p class="list-group-item-text"><a href="https://www.google.ca/maps/place/2100+Bloor+St+W,+Toronto,+ON+M6S/">7B - 2100 Bloor St West<br>
                   Toronto, ON</a></p>
-                <p class="list-group-item-text">Phone: <a href="tel:16473524433">647-352-4433</a><br>
-                  Fax: <a href="tel:14166043922">416-604-3922</a><br></p>
-                <p class="list-group-item-text"><a href="mailto:bloor@hairfreeclinics.com">bloor@hairfreeclinics.com</a><br></p>
-              </div>
+              <p class="list-group-item-text">Phone: <a href="tel:16473524433">647-352-4433</a><br> Fax: <a href="tel:14166043922">416-604-3922</a><br></p>
+              <p class="list-group-item-text"><a href="mailto:bloor@hairfreeclinics.com">bloor@hairfreeclinics.com</a><br></p>
             </div>
-            <div class="list-group-separator"></div>
           </div>
+          <div class="list-group-separator"></div>
         </div>
+      </div>
 
-        <div class="col-md-3">
-          <div class="list-group">
-            <div class="list-group-item">
-              <!-- <div class="row-action-primary">
+      <div class="col-md-3">
+        <div class="list-group">
+          <div class="list-group-item">
+            <!-- <div class="row-action-primary">
                 <i class="material-icons">room</i>
               </div> -->
-              <div class="row-content">
-                <h4 class="list-group-item-heading">Brampton</h4>
+            <div class="row-content">
+              <h4 class="list-group-item-heading">Brampton</h4>
 
-                <p class="list-group-item-text"><a href="https://www.google.ca/maps/place/3068+Mayfield+Rd,+Brampton,+ON+L6Z+0E3/">7 - 3068 Mayfield Road<br>
+              <p class="list-group-item-text"><a href="https://www.google.ca/maps/place/3068+Mayfield+Rd,+Brampton,+ON+L6Z+0E3/">7 - 3068 Mayfield Road<br>
                   Brampton, ON</a></p>
-                <p class="list-group-item-text">
-                  Phone: <a href="tel:19058462442">905-846-2442</a><br></p>
-                <p class="list-group-item-text"><a href="mailto:brampton@hairfreeclinics.com">brampton@hairfreeclinics.com</a><br></p>
-              </div>
+              <p class="list-group-item-text">
+                Phone: <a href="tel:19058462442">905-846-2442</a><br></p>
+              <p class="list-group-item-text"><a href="mailto:brampton@hairfreeclinics.com">brampton@hairfreeclinics.com</a><br></p>
             </div>
-            <div class="list-group-separator"></div>
           </div>
+          <div class="list-group-separator"></div>
         </div>
+      </div>
 
-        <div class="col-md-3">
-          <div class="list-group">
-            <div class="list-group-item">
-              <!-- <div class="row-action-primary">
+      <div class="col-md-3">
+        <div class="list-group">
+          <div class="list-group-item">
+            <!-- <div class="row-action-primary">
                 <i class="material-icons">room</i>
               </div> -->
-              <div class="row-content">
-                <h4 class="list-group-item-heading">Scarborough</h4>
+            <div class="row-content">
+              <h4 class="list-group-item-heading">Scarborough</h4>
 
-                <p class="list-group-item-text"><a href="https://www.google.ca/maps/place/Woodside+Square/">1571 Sandhurst Circle<br>
+              <p class="list-group-item-text"><a href="https://www.google.ca/maps/place/Woodside+Square/">1571 Sandhurst Circle<br>
                   Woodside Square, Scarborough, ON</a></p>
-                <p class="list-group-item-text">Phone: <a href="tel:14167549911">416-754-9911</a><br>
-                  Fax: <a href="tel:14167549915">416-754-9915</a><br>
-                  </p>
-                <p class="list-group-item-text"><a href="mailto:scarborough@hairfreeclinics.com">scarborough@hairfreeclinics.com</a><br></p>
-              </div>
+              <p class="list-group-item-text">Phone: <a href="tel:14167549911">416-754-9911</a><br> Fax: <a href="tel:14167549915">416-754-9915</a><br>
+              </p>
+              <p class="list-group-item-text"><a href="mailto:scarborough@hairfreeclinics.com">scarborough@hairfreeclinics.com</a><br></p>
             </div>
-            <div class="list-group-separator"></div>
           </div>
+          <div class="list-group-separator"></div>
         </div>
+      </div>
 
-        <div class="col-md-3">
-          <div class="list-group">
-            <div class="list-group-item">
-              <!-- <div class="row-action-primary">
+      <div class="col-md-3">
+        <div class="list-group">
+          <div class="list-group-item">
+            <!-- <div class="row-action-primary">
                 <i class="material-icons">room</i>
               </div> -->
-              <div class="row-content">
-                <h4 class="list-group-item-heading">Vancouver</h4>
+            <div class="row-content">
+              <h4 class="list-group-item-heading">Vancouver</h4>
 
-                <p class="list-group-item-text"><a href="https://www.google.ca/maps/place/3077+Granville+St,+Vancouver,+BC+V6H+3J9/">100 - 3077 Granville Street<br>
+              <p class="list-group-item-text"><a href="https://www.google.ca/maps/place/3077+Granville+St,+Vancouver,+BC+V6H+3J9/">100 - 3077 Granville Street<br>
                   Vancouver, BC</a></p>
-                <p class="list-group-item-text">Phone: <a href="tel:16044284898">604-428-4898</a>
-                </p>
+              <p class="list-group-item-text">Phone: <a href="tel:16044284898">604-428-4898</a>
+              </p>
               <p class="list-group-item-text"><a href="mailto:vancouver@hairfreeclinics.com">vancouver@hairfreeclinics.com</a><br></p>
-              </div>
             </div>
-            <div class="list-group-separator"></div>
           </div>
+          <div class="list-group-separator"></div>
         </div>
       </div>
     </div>
-    <a href="tel:14168317498">
-      <div id="embed" class="dark-purple">
-        <span class="glyphicon glyphicon-earphone"></span>
-      </div>
-    </a>
-  </body>
+  </div>
+  <div class="row black bs-component">
+    <div class="col-md-12" style="text-align: center">
+      <!-- <div class="page-header"> -->
+
+      Made with ♥ by <a href="https://goatandsheep.github.io/contact.html">Kemal Ahmed</a>.
+    </div>
+  </div>
+  <a href="tel:14168317498">
+    <div id="embed" class="dark-purple">
+      <span class="glyphicon glyphicon-earphone"></span>
+    </div>
+  </a>
+</body>
+
 </html>

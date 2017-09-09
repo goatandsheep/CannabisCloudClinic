@@ -40,6 +40,14 @@ a {
   padding-bottom:6em;
 }
 
+.black {
+  background-color: black;
+  color: white;
+}
+.dark-purple>a {
+  color: #00ffb6;
+}
+
 .dark-purple {
   background-color: #3949ab;
   color: white;
