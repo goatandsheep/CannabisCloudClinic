@@ -20,14 +20,14 @@ a {
   background-color: #00ffb6;
 }
 #banner {
-  background-image: url('img/fillertemp.png');
+  background-image: url('img/ccc-green.png');
 	top: 0; left: 0; right: 0; bottom: 0;
   background-attachment: fixed;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
   /*background-size: cover;*/
   height: 70vh;
-  background-size: auto 90vh;
+  background-size: contain;
 
 }
 .list-group-item :first-child {
@@ -71,6 +71,10 @@ a {
   /*background-color: #4dffcc !important;*/
   background-color: #66ffd4 !important;
   color: black;
+}
+
+.container {
+  margin-bottom: 2em;
 }
 
 #embed {
